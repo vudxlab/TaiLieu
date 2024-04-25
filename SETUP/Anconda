@@ -1,0 +1,33 @@
+# Tạo một môi trường mới
+conda create --name myenv python==3.9.17
+
+# Kích hoạt môi trường
+conda activate myenv
+
+# Cài đặt gói vào một môi trường
+conda install numpy
+
+# Cài đặt gói vào một môi trường
+conda install numpy
+
+# Liệt kê tất cả các môi trường
+conda env list
+
+# Cập nhật gói 
+conda update numpy
+
+# Xóa môi trường
+conda env remove --name myenv
+
+# Tìm gói có sẵn
+conda search search_term
+
+# Xuất môi trường ra file YAML
+conda env export > C:/path/to/your/folder/environment.yaml
+
+# Tạo môi trường từ file YAML
+conda env create -f environment.yaml
+
+
+
+
