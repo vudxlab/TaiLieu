@@ -24,6 +24,9 @@ conda env remove --name myenv
 # Tìm gói có sẵn
 conda search search_term
 
+# Clone môi trường:
+conda create --name new_env --clone existing_env
+
 # Xuất môi trường ra file YAML
 conda env export > C:/path/to/your/folder/environment.yaml
 
