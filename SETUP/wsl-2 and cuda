@@ -1,3 +1,4 @@
+
 # Cài đặt WSL2
 wsl --list --online
 
@@ -6,6 +7,16 @@ wsl --install Ubuntu-22.04
 
 # Cài đặt Cudatoolkit cho Ubuntu
 nvidia-smi
+
+# Cai dat Miniconda
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+
+# After installing, initialize your newly-installed Miniconda. The following commands initialize for bash and zsh shells:
+~/miniconda3/bin/conda init bash
+~/miniconda3/bin/conda init zsh
 
 # installing CUDA-11.8
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.0-1_all.deb
