@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Cài đặt WSL2
 wsl --list --online
