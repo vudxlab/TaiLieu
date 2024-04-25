@@ -46,3 +46,10 @@ nvcc -V
 
 # install Pytorch (an open source machine learning framework)
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+# Test cuda
+import tensorflow as tf
+tf.test.is_gpu_available()
+
+import torch
+torch.cuda.is_available()
