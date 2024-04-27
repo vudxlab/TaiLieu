@@ -27,3 +27,86 @@
   assign letter=<drive letter>
   # Type and run the command:
   exit
+
+##  If you do not have the Installation Media:
+
+1. Use one of the methods in the following article to boot into the Windows Advanced Startup Options Menu:
+https://www.dell.com/support/kbdoc/en-vn/000147155/booting-to-the-advanced-startup-options-menu-in-windows-10
+
+2. Select Repair your computer from the menu that appears.
+
+3. Select Command Prompt from the Advanced Options tab in the Troubleshoot screen:
+  # Type and run the command:
+  diskpart
+  # Type and run the command:
+  select disk 0
+  # Type and run the command:
+  list vol
+
+4. Verify that the EFI partition (EPS) is using the FAT32 file system and assign a drive letter to it that is not already in use:
+  # Type and run the command:
+  select vol <number of volume>
+  # Type and run the command:
+  assign letter=<drive letter>
+  # Type and run the command:
+  exit
+
+5. To repair the boot record:
+  # Type and run the command:
+  cd /d <drive letter>:\EFI\Microsoft\Boot\
+  # Type and run the command:
+  bootrec /FixBoot
+
+## Windows 11 and Windows 10 (Version 1709 and newer):
+1. Insert the Media (DVD/USB) in your personal computer and restart.
+
+2. Boot from the media.
+
+3. Select Repair Your Computer.
+
+4. Select Troubleshoot.
+
+5. Select Advanced Options.
+
+6. Choose Command Prompt from the menu:
+  # Type and run the command:
+  diskpart
+  # Type and run the command:
+  select disk 0
+  # Type and run the command:
+  list vol
+
+7. Verify that the EFI partition (EPS - EFI System Partition) is using the FAT32 file system. Assign a drive letter to it that is not already in use:
+  # Type and run the command:
+  select vol <number of volume>
+  # Type and run the command:
+  assign letter=<drive letter>
+  # Type and run the command:
+  exit
+
+8. Rebuild the BCD store.
+  # First run the command below to back up the old BCD:
+  ren BCD BCD.bak
+  # Now re-create it using this command:
+  bcdboot c:\Windows /s <boot letter>: /f ALL (You can add a switch before /s for the computer locale: /l <language code>. By default, /l en-us English USA is used.)
+  # bootrec /rebuildbcd
+
+## How to repair your Main Boot Record (MBR)
+#These steps apply to any legacy drive used as a boot drive on any recent Windows Operating System.
+
+1. Use the F12 key at the Dell Splash screen to enter the boot menu. It lets you boot from the Windows installation media or a bootable disk or flash drive.
+
+2. Click the Repair your Computer link at the bottom of the Install Now screen.
+
+3. Click Troubleshoot.
+
+4. Select Command Prompt
+
+5. Enter the following three commands in turn, following each by pressing the Enter key:
+  bootrec /fixmbr
+  bootrec /fixboot
+  bootrec /rebuildbcd
+
+6. Restart the computer with the installation media removed to check if the repair worked.
+
+# If you require further assistance, contact Technical Support
