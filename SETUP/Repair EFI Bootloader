@@ -1,1 +1,29 @@
-How to repair your EFI Bootloader
+#!/bin/bash
+# How to repair your EFI Bootloader
+## Windows 11
+
+1. Insert the Media (DVD/USB) in your personal computer and restart.
+
+2. Boot from the media.
+
+3. Select Repair Your Computer.
+
+4. Select Troubleshoot.
+
+5. Select Advanced Options.
+
+6. Choose Command Prompt from the menu:
+  # Type and run the command:
+  diskpart
+  # Type and run the command:
+  select disk 0
+  # Type and run the command:
+  list vol
+
+7. Verify that the EFI partition (EPS - EFI System Partition) is using the FAT32 file system. Assign a drive letter to it that is not already in use:
+  # Type and run the command:
+  select vol <number of volume>
+  # Type and run the command:
+  assign letter=<drive letter>
+  # Type and run the command:
+  exit
