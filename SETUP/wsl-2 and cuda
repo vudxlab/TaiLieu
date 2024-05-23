@@ -6,6 +6,9 @@ wsl --list --online
 # Chọn phiên bản Ubutun để cài đặt, sử dụng lệnh sau
 wsl --install Ubuntu-22.04
 
+# Chọn phiên bản cần gỡ, sử dụng lệnh sau
+wsl --unregister Ubuntu-22.04
+
 # Cài đặt Cudatoolkit cho Ubuntu
 nvidia-smi
 
