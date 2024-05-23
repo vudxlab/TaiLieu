@@ -28,6 +28,15 @@ sudo apt-get install wget ca-certificates
 code .
 code
 
+# Install wget on Rocky/Fedora
+sudo dnf install wget -y
+sudo which wget
+
+# Install dpkg on Rocky/Fedora
+sudo yum -y install epel-release
+sudo yum repolist
+sudo yum install dpkg-devel dpkg-dev
+
 # installing CUDA-11.8
 wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.0-1_all.deb
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
