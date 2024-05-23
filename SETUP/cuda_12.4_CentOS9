@@ -1,15 +1,9 @@
 
-
-
-
-
-
-
+#!/bin/bash
 
 # Install wget on Rocky/Fedora
 sudo dnf install wget -y
 sudo which wget
-
 
 # Cai dat Miniconda
 mkdir -p ~/miniconda3 # Tạo thư mục mới 
