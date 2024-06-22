@@ -3,10 +3,15 @@
 # These are step-by-step guidelines to install and switch between two versions of cuda in the same machine, but the steps can be generalized to more than two versions.
 
 # Installing the first version
+
   ## Choose the appropriate version from https://developer.nvidia.com/cuda-toolkit-archive. For this example, we will choose version 10.0.
+
   ## Choose the appropriate OS, architecture, distribution, and version. For the machines in the pool, these will be Linux, x86_64, Ubuntu, and 18.04 respectively.
+
   ## Click runfile (local) under installer type, and download the "Base Installer".
+
   ## Follow these instructions to install cuda:
+
     ### Run sudo sh cuda_10.0.130_410.48_linux.run
     ### Accept the EULA.
     ### Leave all default answers as is.
@@ -15,38 +20,47 @@
     ### Answer yes to: Do you want to install a symbolic link at /usr/local/cuda?
     ### Answer no to: Install the CUDA 10.0 Samples?
     ### Ignore the incomplete installation warning, since the NVIDIA driver is already installed in these machines!
-To access cuda-10.0 system-wide, add the following two lines at the end of ~/.bashrc
-export PATH="/usr/local/cuda-10.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
-Run source ~/.bashrc to compile it.
-Verify the installation by running nvcc --version. It should show
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2018 NVIDIA Corporation
-Built on Sat_Aug_25_21:08:01_CDT_2018
-Cuda compilation tools, release 10.0, V10.0.130
-Installing the second version
-Choose the appropriate version from https://developer.nvidia.com/cuda-toolkit-archive. For this example, we will choose version 10.2.
-Choose the appropriate OS, architecture, distribution, and version. For the machines in the pool, these will be Linux, x86_64, Ubuntu, and 18.04 respectively.
-Click runfile (local) under installer type, and follow these instructions to install cuda:
-Run sudo sh cuda_10.2.89_440.33.01_linux.run
-Accept the EULA.
-**IMPORTANT** Deselect everything but CUDA Toolkit 10.2 in the installation prompt.
-**IMPORTANT** Answer no to: A symlink already exists at /usr/local/cuda. Update to this installation? [We will do this step later]
-Ignore the incomplete installation warning, since the NVIDIA driver is already installed in these machines!
-To access cuda-10.2 system-wide, replace the following two lines in ~/.bashrc
-export PATH="/usr/local/cuda-10.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
-with the two lines
-export PATH="/usr/local/cuda-10.2/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH"
-Run source ~/.bashrc to compile it.
-Verify the installation by running nvcc --version. It should show
-nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2019 NVIDIA Corporation
-Built on Wed_Oct_23_19:24:38_PDT_2019
-Cuda compilation tools, release 10.2, V10.2.89
-Switching between the versions
-When you have multiple CUDA installed on some paths (e.g., /usr/local/), prior to running your program, set the following environmental path to the version (10.0 for example) you want to use:
-export PATH="/usr/local/cuda-10.0/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
-Please check the common directory /usr/local/ to see if the version you want to use is already installed. Otherwise, you may install your version there or to your local folder (preferred).
+
+  ## To access cuda-10.0 system-wide, add the following two lines at the end of ~/.bashrc
+
+      export PATH="/usr/local/cuda-10.0/bin:$PATH"
+      export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
+      Run source ~/.bashrc to compile it.
+
+  ## Verify the installation by running nvcc --version. It should show
+
+      nvcc: NVIDIA (R) Cuda compiler driver
+      Copyright (c) 2005-2018 NVIDIA Corporation
+      Built on Sat_Aug_25_21:08:01_CDT_2018
+      Cuda compilation tools, release 10.0, V10.0.130
+
+# Installing the second version
+    ## Choose the appropriate version from https://developer.nvidia.com/cuda-toolkit-archive. For this example, we will choose version 10.2.
+
+    ## Choose the appropriate OS, architecture, distribution, and version. For the machines in the pool, these will be Linux, x86_64, Ubuntu, and 18.04 respectively.
+
+    ## Click runfile (local) under installer type, and follow these instructions to install cuda:
+
+        Run sudo sh cuda_10.2.89_440.33.01_linux.run
+        Accept the EULA.
+        **IMPORTANT** Deselect everything but CUDA Toolkit 10.2 in the installation prompt.
+        **IMPORTANT** Answer no to: A symlink already exists at /usr/local/cuda. Update to this installation? [We will do this step later]
+        Ignore the incomplete installation warning, since the NVIDIA driver is already installed in these machines!
+    To access cuda-10.2 system-wide, replace the following two lines in ~/.bashrc
+        export PATH="/usr/local/cuda-10.0/bin:$PATH"
+        export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
+        with the two lines
+        export PATH="/usr/local/cuda-10.2/bin:$PATH"
+        export LD_LIBRARY_PATH="/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH"
+    Run source ~/.bashrc to compile it.
+    Verify the installation by running nvcc --version. It should show
+        nvcc: NVIDIA (R) Cuda compiler driver
+        Copyright (c) 2005-2019 NVIDIA Corporation
+        Built on Wed_Oct_23_19:24:38_PDT_2019
+        Cuda compilation tools, release 10.2, V10.2.89
+
+    Switching between the versions
+        When you have multiple CUDA installed on some paths (e.g., /usr/local/), prior to running your program, set the following environmental path to the version (10.0 for example) you want to use:
+        export PATH="/usr/local/cuda-10.0/bin:$PATH"
+        export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
+        Please check the common directory /usr/local/ to see if the version you want to use is already installed. Otherwise, you may install your version there or to your local folder (preferred).
