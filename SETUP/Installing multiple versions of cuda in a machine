@@ -2,33 +2,24 @@
 
 # These are step-by-step guidelines to install and switch between two versions of cuda in the same machine, but the steps can be generalized to more than two versions.
 
-# Installing the first version
-
-  ## Choose the appropriate version from https://developer.nvidia.com/cuda-toolkit-archive. For this example, we will choose version 10.0.
-
-  ## Choose the appropriate OS, architecture, distribution, and version. For the machines in the pool, these will be Linux, x86_64, Ubuntu, and 18.04 respectively.
-
-  ## Click runfile (local) under installer type, and download the "Base Installer".
-
-  ## Follow these instructions to install cuda:
-
-    ### Run sudo sh cuda_10.0.130_410.48_linux.run
-    ### Accept the EULA.
-    ### Leave all default answers as is.
-    ### **IMPORTANT** Answer no to: Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 410.48?
-    ### Answer yes to: Install the CUDA 10.0 Toolkit?
-    ### Answer yes to: Do you want to install a symbolic link at /usr/local/cuda?
-    ### Answer no to: Install the CUDA 10.0 Samples?
-    ### Ignore the incomplete installation warning, since the NVIDIA driver is already installed in these machines!
-
-  ## To access cuda-10.0 system-wide, add the following two lines at the end of ~/.bashrc
-
+1. Installing the first version
+  1. Choose the appropriate version from https://developer.nvidia.com/cuda-toolkit-archive. For this example, we will choose version 10.0.
+  2. Choose the appropriate OS, architecture, distribution, and version. For the machines in the pool, these will be Linux, x86_64, Ubuntu, and 18.04 respectively.
+  3. Click runfile (local) under installer type, and download the "Base Installer".
+  4. Follow these instructions to install cuda:
+      1. Run sudo sh cuda_10.0.130_410.48_linux.run
+      2. Accept the EULA.
+      3. Leave all default answers as is.
+      4. **IMPORTANT** Answer no to: Install NVIDIA Accelerated Graphics Driver for Linux-x86_64 410.48?
+      5. Answer yes to: Install the CUDA 10.0 Toolkit?
+      6. Answer yes to: Do you want to install a symbolic link at /usr/local/cuda?
+      7. Answer no to: Install the CUDA 10.0 Samples?
+      8. Ignore the incomplete installation warning, since the NVIDIA driver is already installed in these machines!
+ 5. To access cuda-10.0 system-wide, add the following two lines at the end of ~/.bashrc
       export PATH="/usr/local/cuda-10.0/bin:$PATH"
       export LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH"
       Run source ~/.bashrc to compile it.
-
-  ## Verify the installation by running nvcc --version. It should show
-
+6. Verify the installation by running nvcc --version. It should show
       nvcc: NVIDIA (R) Cuda compiler driver
       Copyright (c) 2005-2018 NVIDIA Corporation
       Built on Sat_Aug_25_21:08:01_CDT_2018
