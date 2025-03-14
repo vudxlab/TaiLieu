@@ -25,3 +25,10 @@
    #Bạn sẽ nhận được một thông báo xác nhận kết nối thành công.
    #Khi bạn đã thiết lập khóa SSH và thêm nó vào tài khoản GitHub của mình, bạn sẽ có thể sử dụng nó để truy cập vào kho lưu trữ và thực hiện các hoạt động Git mà không cần nhập tên người dùng và mật khẩu.
 7. Tạo key SSH trên github và paste key vào là OK
+
+Một số lệnh của git trên command windown
+1. ** Sử dụng .gitignore để ngăn git add thêm các tệp có định dạng cố định
+   ```
+   notepad .gitignore
+
+   ```
