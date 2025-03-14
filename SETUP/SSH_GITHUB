@@ -27,8 +27,9 @@
 7. Tạo key SSH trên github và paste key vào là OK
 
 Một số lệnh của git trên command windown
-1. ** Sử dụng .gitignore để ngăn git add thêm các tệp có định dạng cố định
+1. Sử dụng **.gitignore** để ngăn git add thêm các tệp có định dạng cố định
    ```
    notepad .gitignore
-
+   Thêm *.npy, 
    ```
+
