@@ -1,39 +1,27 @@
 #!/bin/bash
-#Để thiết lập và sử dụng khóa SSH trên GitHub, làm theo các bước sau:
-
-##1. **Tạo cặp khóa SSH**: Mở terminal trên máy tính của bạn và chạy lệnh sau để tạo một cặp khóa SSH mới:
+Để thiết lập và sử dụng khóa SSH trên GitHub, làm theo các bước sau:
+1. **Tạo cặp khóa SSH**: Mở terminal trên máy tính của bạn và chạy lệnh sau để tạo một cặp khóa SSH mới:
    ```
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
    #Thay `"your_email@example.com"` bằng địa chỉ email được liên kết với tài khoản GitHub của bạn. Bạn cũng có thể chọn một đường dẫn tệp cho cặp khóa nếu bạn muốn.
-
 2. **Nhập passphrase (tùy chọn)**: Bạn sẽ được yêu cầu nhập một passphrase để bảo vệ khóa của bạn. Passphrase giúp bảo vệ khóa SSH của bạn, tăng cường tính bảo mật. Nhập passphrase và nhấn Enter, hoặc bạn có thể bỏ trống nếu bạn không muốn sử dụng passphrase.
-
 3. **Thêm khóa SSH vào agent SSH**: Chạy lệnh sau để thêm khóa SSH mới vào SSH agent của bạn:
-
    ```
    eval "$(ssh-agent -s)"
    ssh-add ~/.ssh/id_rsa
    ```
-
-   Lưu ý rằng bạn cần thay đổi `~/.ssh/id_rsa` nếu bạn đã sử dụng một tên tệp khác cho cặp khóa của mình.
-
+   #Lưu ý rằng bạn cần thay đổi `~/.ssh/id_rsa` nếu bạn đã sử dụng một tên tệp khác cho cặp khóa của mình.
 4. **Copy khóa công khai**: Sử dụng lệnh sau để sao chép nội dung của khóa công khai (`~/.ssh/id_rsa.pub`):
-
    ```
    cat ~/.ssh/id_rsa.pub
    ```
-
 5. **Thêm khóa công khai vào GitHub**: Đăng nhập vào tài khoản GitHub của bạn và truy cập vào Settings > SSH and GPG keys. Nhấn vào nút "New SSH key" và dán nội dung khóa công khai mà bạn đã sao chép từ bước trước vào ô "Key". Đặt một tiêu đề cho khóa nếu bạn muốn, sau đó nhấn "Add SSH key".
 
 6. **Kiểm tra kết nối SSH**: Để kiểm tra xem mọi thứ hoạt động như mong đợi, chạy lệnh sau trong terminal:
-
    ```
    ssh -T git@github.com
    ```
-
-   Bạn sẽ nhận được một thông báo xác nhận kết nối thành công.
-
-Khi bạn đã thiết lập khóa SSH và thêm nó vào tài khoản GitHub của mình, bạn sẽ có thể sử dụng nó để truy cập vào kho lưu trữ và thực hiện các hoạt động Git mà không cần nhập tên người dùng và mật khẩu.
-
+   #Bạn sẽ nhận được một thông báo xác nhận kết nối thành công.
+   #Khi bạn đã thiết lập khóa SSH và thêm nó vào tài khoản GitHub của mình, bạn sẽ có thể sử dụng nó để truy cập vào kho lưu trữ và thực hiện các hoạt động Git mà không cần nhập tên người dùng và mật khẩu.
 7. Tạo key SSH trên github và paste key vào là OK
