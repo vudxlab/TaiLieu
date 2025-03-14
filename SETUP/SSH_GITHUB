@@ -1,14 +1,11 @@
 #!/bin/bash
+#Để thiết lập và sử dụng khóa SSH trên GitHub, làm theo các bước sau:
 
-Để thiết lập và sử dụng khóa SSH trên GitHub, làm theo các bước sau:
-
-1. **Tạo cặp khóa SSH**: Mở terminal trên máy tính của bạn và chạy lệnh sau để tạo một cặp khóa SSH mới:
-
+##1. **Tạo cặp khóa SSH**: Mở terminal trên máy tính của bạn và chạy lệnh sau để tạo một cặp khóa SSH mới:
    ```
    ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
    ```
-
-   Thay `"your_email@example.com"` bằng địa chỉ email được liên kết với tài khoản GitHub của bạn. Bạn cũng có thể chọn một đường dẫn tệp cho cặp khóa nếu bạn muốn.
+   #Thay `"your_email@example.com"` bằng địa chỉ email được liên kết với tài khoản GitHub của bạn. Bạn cũng có thể chọn một đường dẫn tệp cho cặp khóa nếu bạn muốn.
 
 2. **Nhập passphrase (tùy chọn)**: Bạn sẽ được yêu cầu nhập một passphrase để bảo vệ khóa của bạn. Passphrase giúp bảo vệ khóa SSH của bạn, tăng cường tính bảo mật. Nhập passphrase và nhấn Enter, hoặc bạn có thể bỏ trống nếu bạn không muốn sử dụng passphrase.
 
