@@ -1,3 +1,5 @@
+#!/bin/bash
+
 Để thiết lập và sử dụng khóa SSH trên GitHub, làm theo các bước sau:
 
 1. **Tạo cặp khóa SSH**: Mở terminal trên máy tính của bạn và chạy lệnh sau để tạo một cặp khóa SSH mới:
